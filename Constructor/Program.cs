@@ -31,7 +31,7 @@ class A{
 class Program{
 
     static int Main(){
-        A obj = new A("ohla",12);
+        A obj = new("ohla",12);
 
         Console.WriteLine(obj.foo);
         Console.WriteLine(obj.bar);
@@ -45,7 +45,7 @@ class Program{
         Console.WriteLine("\n");
 
 
-        A obj2 = new A("ohla",12,13) ;
+        A obj2 = new("ohla",12,13) ;
         Console.WriteLine(obj2.foo);
         Console.WriteLine(obj2.bar);
         Console.WriteLine(obj2.dar);
