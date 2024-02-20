@@ -19,6 +19,13 @@ class A{
         this.bar = bar;
         this.dar = dar;
     }
+
+    public void Func1(){
+        Console.WriteLine("func1 is called without params;" + this.foo);
+    }
+    public void Func1(int a){
+        Console.WriteLine("func1 is called with params "+a+";"+this.foo);
+    }
 }
 
 class Program{
@@ -29,6 +36,13 @@ class Program{
         Console.WriteLine(obj.foo);
         Console.WriteLine(obj.bar);
         Console.WriteLine(obj.dar);
+
+        Console.WriteLine("\n");
+
+        obj.Func1();
+        obj.Func1(1);
+
+        Console.WriteLine("\n");
 
 
         A obj2 = new A("ohla",12,13) ;
