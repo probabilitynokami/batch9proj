@@ -50,6 +50,12 @@ class Program{
         Console.WriteLine(obj2.bar);
         Console.WriteLine(obj2.dar);
 
+        A obj3 = new("ohla",13,12){
+            foo = "hehe",
+            bar = 12,
+            dar = 13
+        }; // does this ignore the constructor? yes
+        Console.WriteLine(obj3.foo+obj3.bar+obj3.dar);
         return -1;
     }
 
