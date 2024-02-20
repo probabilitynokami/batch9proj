@@ -16,7 +16,7 @@ class A{
 
 class Program{
 
-    static void Main(){
+    static int Main(){
         A obj = new A("ohla",12);
 
         Console.WriteLine(obj.foo);
@@ -24,7 +24,7 @@ class Program{
 
         obj.tobeoverrided();
 
-        return;
+        return -1;
     }
 
 
