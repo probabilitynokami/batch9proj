@@ -1,5 +1,5 @@
 
-public class Engine{
+class Engine{
 
     public int numberOfCyllinder;
     public int volume;
