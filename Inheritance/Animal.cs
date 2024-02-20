@@ -3,9 +3,9 @@ namespace Animalia;
 public class Animal
 {
     public string gender;
-    public Animal(){
+    public Animal(string gender){
         Console.WriteLine("Animal Constructor");
-        this.gender = "hohoho";
+        this.gender = gender;
     }
     public void Walk(){
         Console.WriteLine("animal walk");
