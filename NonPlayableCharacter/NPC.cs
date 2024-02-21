@@ -39,7 +39,7 @@ public class NPC
     public static List<NPC> GetAll(){
         return _allNPC;
     }
-    public static int GetCount(){
+    public static uint GetCount(){
         return _countNPC;
     }
 }
