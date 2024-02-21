@@ -32,6 +32,10 @@ public class NPC
         healthPoint = initHealth;
     }
 
+    public int GetHealth(){
+        return healthPoint;
+    }
+
     public static List<NPC> GetAll(){
         return _allNPC;
     }
