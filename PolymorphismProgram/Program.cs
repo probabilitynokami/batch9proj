@@ -7,6 +7,9 @@ a = new DerivedClass1();
 a.Call();
 a = new DerivedClass2();
 a.Call();
+a = new DerivedDerivedClass1();
+a.Call();
+
 Console.WriteLine("\n");
 (new DerivedClass1()).Call();
 (new DerivedClass2()).Call(); // method hiding
@@ -23,6 +26,12 @@ class DerivedClass1 : BaseClass {
         Console.WriteLine("derived class1 Called");
     }
 
+}
+
+class DerivedDerivedClass1 : DerivedClass1 {
+    public override void Call(){
+        Console.WriteLine("derived derived class1 Called");
+    }
 }
 
 class DerivedClass2 : BaseClass{
