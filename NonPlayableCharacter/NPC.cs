@@ -19,7 +19,7 @@ public class Swordsman : NPC{
 
 public class NPC
 {
-    private static int _countNPC = 0;
+    private static uint _countNPC = 0;
     private static List<NPC>? _allNPC;
     protected int healthPoint;
 
