@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
@@ -26,6 +26,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolymorphismProgram", "PolymorphismProgram\PolymorphismProgram.csproj", "{4180D9DD-2CAC-49D6-A1A5-D21AACC10369}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LinkingProjects", "LinkingProjects", "{16C539E2-C3F4-4EAD-949D-893C527A406C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CursedCSharp", "CursedCSharp\CursedCSharp.csproj", "{581797FB-6CBC-4FF6-B89C-5D7B59B4DF91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -68,8 +70,13 @@ Global
 		{4180D9DD-2CAC-49D6-A1A5-D21AACC10369}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4180D9DD-2CAC-49D6-A1A5-D21AACC10369}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4180D9DD-2CAC-49D6-A1A5-D21AACC10369}.Release|Any CPU.Build.0 = Release|Any CPU
+		{581797FB-6CBC-4FF6-B89C-5D7B59B4DF91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{581797FB-6CBC-4FF6-B89C-5D7B59B4DF91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{581797FB-6CBC-4FF6-B89C-5D7B59B4DF91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{581797FB-6CBC-4FF6-B89C-5D7B59B4DF91}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{581797FB-6CBC-4FF6-B89C-5D7B59B4DF91} = {9F0259EA-BFCC-4E92-8261-D2D87EF62BAC}
 		{16C539E2-C3F4-4EAD-949D-893C527A406C} = {FE4E2165-E933-4DB9-A7B8-425CD553F26A}
 		{4180D9DD-2CAC-49D6-A1A5-D21AACC10369} = {9F0259EA-BFCC-4E92-8261-D2D87EF62BAC}
 		{244B188E-7DBC-4778-801A-C4A0CBED5299} = {16C539E2-C3F4-4EAD-949D-893C527A406C}
