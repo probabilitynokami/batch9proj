@@ -35,7 +35,7 @@ class DerivedDerivedClass1 : DerivedClass1 {
 }
 
 class DerivedClass2 : BaseClass{
-    public void Call(){
+    public new void Call(){ // method hiding
         Console.WriteLine("derived class2 Called");
     }
 
