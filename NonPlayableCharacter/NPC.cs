@@ -19,13 +19,13 @@ public class Swordsman : NPC{
 
 public class NPC
 {
-    private static int _countNPC;
-    private static List<NPC> _allNPC;
+    private static int _countNPC = 0;
+    private static List<NPC>? _allNPC;
     protected int healthPoint;
 
     public NPC(int initHealth){
-        if (_countNPC == 0){
-            _allNPC = new List<NPC>();
+        if (_allNPC is null){
+            _allNPC = [];
         }
         _countNPC++;
         _allNPC.Add(this);
