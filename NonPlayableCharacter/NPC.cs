@@ -37,7 +37,7 @@ public class NPC
     }
 
     public static List<NPC> GetAll(){
-        return _allNPC;
+        return _allNPC ?? [];
     }
     public static uint GetCount(){
         return _countNPC;
