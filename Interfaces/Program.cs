@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 // Console.WriteLine("Hello, World!");
-
+using InterfaceTEst;
 class Program{
     static void Main(){
         DatabaseProject proj = new();
@@ -20,36 +20,39 @@ class Program{
 
 }
 
+namespace InterfaceTEst{
 
-public interface ISaveable {
-    public int Write(string fileName); // save to file
-}
-
-public interface IDatabase {
-    public int ConnectDB(string targetDB);
-    public int Write(string data); // write data to database
-    public int CloseDB();
-}
-
-// a db project should be able to save the project and interract with DB
-public class DatabaseProject : ISaveable, IDatabase {     
-    int ISaveable.Write(string fileName){
-        Console.WriteLine("saving database project to "+fileName);
-        return 0; // success code
-    }
-    int IDatabase.Write(string data){
-        Console.WriteLine($"saving {data} to db");
-        return 0;
-    }
-    int IDatabase.ConnectDB(string targetDB)
-    {
-        Console.WriteLine("Connected to "+targetDB);
-        return 0;
+    public interface ISaveable {
+        public int Write(string fileName); // save to file
     }
 
-    int IDatabase.CloseDB()
-    {
-        Console.WriteLine("close DB");
-        return 0;
+    public interface IDatabase {
+        public int ConnectDB(string targetDB);
+        public int Write(string data); // write data to database
+        public int CloseDB();
     }
+
+    // a db project should be able to save the project and interract with DB
+    public class DatabaseProject : ISaveable, IDatabase {     
+        int ISaveable.Write(string fileName){
+            Console.WriteLine("saving database project to "+fileName);
+            return 0; // success code
+        }
+        int IDatabase.Write(string data){
+            Console.WriteLine($"saving {data} to db");
+            return 0;
+        }
+        int IDatabase.ConnectDB(string targetDB)
+        {
+            Console.WriteLine("Connected to "+targetDB);
+            return 0;
+        }
+
+        int IDatabase.CloseDB()
+        {
+            Console.WriteLine("close DB");
+            return 0;
+        }
+    }
+
 }
