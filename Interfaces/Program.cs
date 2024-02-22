@@ -56,3 +56,45 @@ namespace InterfaceTEst{
     }
 
 }
+
+namespace InterfaceSegregation{ 
+    // suffix _Wrong means doesn't adhere to interface segregation
+    public interface IBird_Wrong{
+        void Eat();
+        void Fly();
+    }
+
+    public class Eagle_Wrong : IBird_Wrong{
+        public void Eat(){}
+        public void Fly(){}
+    }
+    public class Penguin_Wrong : IBird_Wrong
+    {
+        public void Eat(){}
+        public void Fly()
+        {
+            throw new NotImplementedException(); // penguin can't fly
+        }
+    }
+    
+    // correct interface segregation
+
+    public interface IBird{
+        void Eat();
+    }
+
+    public interface IFlyingBird : IBird{
+        void Fly();
+    }
+
+    public class Eagle : IFlyingBird
+    {
+        public void Eat(){}
+        public void Fly(){}
+    }
+    public class Penguin : IBird
+    {
+        public void Eat(){}
+    }
+
+}
