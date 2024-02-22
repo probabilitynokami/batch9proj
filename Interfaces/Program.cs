@@ -1,9 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 // Console.WriteLine("Hello, World!");
 
-
-using Microsoft.Win32.SafeHandles;
-
 class Program{
     static void Main(){
         DatabaseProject proj = new();
