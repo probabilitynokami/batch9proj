@@ -31,7 +31,8 @@ public interface IDatabase {
     public int CloseDB();
 }
 
-public class DatabaseProject : ISaveable, IDatabase { // a db project should be able to save the project and interract with DB
+// a db project should be able to save the project and interract with DB
+public class DatabaseProject : ISaveable, IDatabase {     
     int ISaveable.Write(string fileName){
         Console.WriteLine("saving database project to "+fileName);
         return 0; // success code
