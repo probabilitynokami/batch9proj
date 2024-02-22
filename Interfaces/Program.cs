@@ -59,6 +59,7 @@ namespace InterfaceTEst{
 
 namespace InterfaceSegregation{ 
     // suffix _Wrong means doesn't adhere to interface segregation
+
     public interface IBird_Wrong{
         void Eat();
         void Fly();
