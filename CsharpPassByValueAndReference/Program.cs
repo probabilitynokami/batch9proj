@@ -18,6 +18,18 @@ class Program{
         // Function2(ref a); // Illegal, ref require it to be assigned before being read
         Function3(out a);
         Console.WriteLine(a); // output: 4
+
+
+        // real use of out
+
+        string to_parse = "69";
+        bool status = int.TryParse(to_parse, out int result);
+        Console.WriteLine(status+" "+result); // identifier result magically can be used without declaring lol
+
+        to_parse = "69lol"; // should fail
+        status = int.TryParse(to_parse, out int result2); // exception handling with manual catch -> better than regular exception handling
+        Console.WriteLine(status+" "+result2);         
+
     }
 
     // lets make a parameter mutating function
