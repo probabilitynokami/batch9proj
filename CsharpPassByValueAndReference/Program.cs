@@ -19,6 +19,11 @@ class Program{
         Function3(out a);
         Console.WriteLine(a); // output: 4
 
+        Function4(in a);
+
+        Function5(in y);
+        Console.WriteLine(y.member);
+
 
         // real use of out
 
@@ -48,5 +53,14 @@ class Program{
         // Console.WriteLine(x); // illegal to read before assignment in method
         x = 3;
         x = x+1;
+    }
+
+    static void Function4(in int x){ // forced immutable param, for compile-time optimization
+        // x = 1; //illegal
+        ;
+    }
+
+    static void Function5(in ReferenceTypeClass x){
+        x.member = 999; // legal because it doesn't mutate x, but x.member instead..
     }
 }
