@@ -3,7 +3,7 @@
 A a = new();
 
 Console.WriteLine(A.e); //e is static
-Console.WriteLine(a.e); //compile error
+// Console.WriteLine(a.e); //compile error
 Console.WriteLine(a.x);
 // a.x = 1; // compile error
 
