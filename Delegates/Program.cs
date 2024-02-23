@@ -6,7 +6,10 @@
 // rather than creating interface or adapting a lot of classes,
 // from inaccessible libraries
 // just pass it to a function pointer then call all.
+using System.Reflection;
+
 public delegate void MyReceiveDataDelegate(string s);
+public delegate int ValueReturningDelegate(int x);
 class Program{
     static void Main(){
         TCP tcp = new();
@@ -15,12 +18,40 @@ class Program{
         QuantumEntanglementCom qcom = new();
 
         MyReceiveDataDelegate functionPointers = tcp.Recv;// = new();
-        functionPointers += serial.ReceiveDataSerially;
-        functionPointers += icom.ReceiveCosmicRay;
-        functionPointers += qcom.ReadQuantas;
+        {
 
+            functionPointers += serial.ReceiveDataSerially;
+            functionPointers += icom.ReceiveCosmicRay;
+            functionPointers += qcom.ReadQuantas;
+
+            functionPointers += (new TCP()).ModifyTest("hehehe").Recv; // dangling FP?? GC won't delete the object since a pointer of the objet is still in use in the delegate
+
+        }
         functionPointers.Invoke("encryptionkey123");
+
+        //delegates on functions that returns
+        ValueReturningDelegate dlg = Test;
+        dlg += Tost;
+        dlg += Test;
+        dlg += Tost;
+
+        int result = dlg.Invoke(0); // only return the last added function
+        Console.WriteLine(result);
+
+        // Invocation list
+        // invoke delegates onebyone to get the returns of each function
+        Delegate[] separatedDelegates = dlg.GetInvocationList();
+        foreach(Delegate dg in separatedDelegates){ // you can also change Delegate to MyReceiveDataDelegate here...
+            Console.WriteLine(dg.GetMethodInfo().Name+":"+((ValueReturningDelegate)dg).Invoke(0)); 
+        }
+        
         return;
+    }
+    public static int Test(int x){
+        return 0;
+    }
+    public static int Tost(int x){
+        return 1;
     }
 }
 
@@ -28,8 +59,14 @@ class Program{
 //---------------- inaccessible code -------------------//
 
 public class TCP{
+    public string test="n";
     public void Recv(string enc_key){
 		Console.WriteLine(""+this+enc_key);
+        Console.WriteLine(test);
+    }
+    public TCP ModifyTest(string s){
+        test = s;
+        return this;
     }
     
 }
