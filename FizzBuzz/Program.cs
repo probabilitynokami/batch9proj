@@ -17,11 +17,12 @@
         Console.WriteLine("=====================separator===================");
 
         // 2nd way
-        FooBarOperationBuilder operationBuilder = new();
-        operationBuilder.AddOperation((int x)=>(x%3==0)?"Foo":"");
-        operationBuilder.AddOperation((int x)=>(x%5==0)?"Bar":"");
+        operation = (new FooBarOperationBuilder())
+                    .AddOperation((int x)=>(x%3==0)?"Foo":"")
+                    .AddOperation((int x)=>(x%5==0)?"Bar":"")
+                    .Build();
 
-        Console.WriteLine(FooBar(100, operationBuilder.Build()));
+        Console.WriteLine(FooBar(100, operation));
     }
     static string FooBar(int n, Func<int,string> operation){
         string operationResult = operation(0);
@@ -43,8 +44,9 @@
 
 public class FooBarOperationBuilder{
     private Func<int, string> operations = null;
-    public void AddOperation(Func<int,string> operation){
+    public FooBarOperationBuilder AddOperation(Func<int,string> operation){
         operations += operation;
+        return this; 
     }
     public Func<int, string> Build(){
         Func<int, string> result = (int x) => {
