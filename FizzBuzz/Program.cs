@@ -12,21 +12,49 @@
         };
 
         Console.WriteLine(FooBar(100, operation));
+
+
+        Console.WriteLine("=====================separator===================");
+
+        // 2nd way
+        FooBarOperationBuilder operationBuilder = new();
+        operationBuilder.AddOperation((int x)=>(x%3==0)?"Foo":"");
+        operationBuilder.AddOperation((int x)=>(x%5==0)?"Bar":"");
+
+        Console.WriteLine(FooBar(100, operationBuilder.Build()));
     }
-    static string FooBar(int n, Func<int,string> f){
-        string fOutput = f(0);
-        if (fOutput == "")
-            fOutput = "0";
-        string retVal = "0"; // because 0 still should 0
+    static string FooBar(int n, Func<int,string> operation){
+        string operationResult = operation(0);
+        if (operationResult == "")
+            operationResult = "0";
+        string finalString = "0"; // because 0 still should 0
 
         for(int i=1;i<=n;i++){
-            fOutput = f(i);
-            if(fOutput == "")
-                fOutput = i.ToString();
-            retVal += ", "+fOutput; 
+            operationResult = operation(i);
+            if(operationResult == "")
+                operationResult = i.ToString();
+            finalString += ", "+operationResult; 
         }
 
-        return retVal;
+        return finalString;
     }
 
+}
+
+public class FooBarOperationBuilder{
+    private Func<int, string> operations = null;
+    public void AddOperation(Func<int,string> operation){
+        operations += operation;
+    }
+    public Func<int, string> Build(){
+        Func<int, string> result = (int x) => {
+            string ret = "";
+            foreach(var ops in operations.GetInvocationList()){
+                ret += ((Func<int,string>)ops).Invoke(x);
+            }
+            return ret;
+        };
+
+        return result;
+    }
 }
