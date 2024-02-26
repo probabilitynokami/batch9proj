@@ -1,4 +1,4 @@
-
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
@@ -70,6 +70,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FizzBuzz", "FizzBuzz\FizzBuzz.csproj", "{2A133718-D9EA-4231-A41D-C6DB57F7E4B8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OperatorOverloading", "OperatorOverloading\OperatorOverloading.csproj", "{B4091654-E548-41F8-8C60-589D2AA595B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartialClasses", "PartialClasses\PartialClasses.csproj", "{AB1D914C-8E71-4D26-865C-95848C85C087}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -184,6 +186,10 @@ Global
 		{B4091654-E548-41F8-8C60-589D2AA595B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4091654-E548-41F8-8C60-589D2AA595B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4091654-E548-41F8-8C60-589D2AA595B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB1D914C-8E71-4D26-865C-95848C85C087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB1D914C-8E71-4D26-865C-95848C85C087}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB1D914C-8E71-4D26-865C-95848C85C087}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB1D914C-8E71-4D26-865C-95848C85C087}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B4091654-E548-41F8-8C60-589D2AA595B0} = {10FEE70C-7E13-47AA-BB5F-E6086F9DF5D8}
