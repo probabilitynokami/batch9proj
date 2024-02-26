@@ -7,6 +7,7 @@
 // from inaccessible libraries
 // just pass it to a function pointer then call all.
 using System.Reflection;
+using System.Runtime.InteropServices;
 
 public delegate void MyReceiveDataDelegate(string s);
 public delegate int ValueReturningDelegate(int x);
@@ -18,16 +19,17 @@ class Program{
         QuantumEntanglementCom qcom = new();
 
         MyReceiveDataDelegate functionPointers = tcp.Recv;// = new();
+        using (TCP newcom = new())
         {
 
             functionPointers += serial.ReceiveDataSerially;
             functionPointers += icom.ReceiveCosmicRay;
             functionPointers += qcom.ReadQuantas;
 
-            functionPointers += (new TCP()).ModifyTest("hehehe").Recv; // dangling FP?? GC won't delete the object since a pointer of the objet is still in use in the delegate
+            functionPointers += newcom.ModifyTest("hehehe").Recv; // dangling FP?? GC won't delete the object since a pointer of the objet is still in use in the delegate
 
         }
-        functionPointers.Invoke("encryptionkey123");
+        functionPointers.Invoke("encryptionkey123"); // newcom should be destroyed here but the func stil called??
 
         //delegates on functions that returns
         ValueReturningDelegate dlg = Test;
@@ -58,7 +60,7 @@ class Program{
 
 //---------------- inaccessible code -------------------//
 
-public class TCP{
+public class TCP : IDisposable{
     public string test="n";
     public void Recv(string enc_key){
 		Console.WriteLine(""+this+enc_key);
@@ -68,7 +70,11 @@ public class TCP{
         test = s;
         return this;
     }
-    
+
+    public void Dispose()
+    {
+        Console.WriteLine("TCP Disposed");
+    }
 }
 
 public class SerialConnection{
