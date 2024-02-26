@@ -17,7 +17,7 @@
         string fOutput = f(0);
         if (fOutput == "")
             fOutput = "0";
-        string retVal = "0";
+        string retVal = "0"; // because 0 still should 0
 
         for(int i=1;i<=n;i++){
             fOutput = f(i);
