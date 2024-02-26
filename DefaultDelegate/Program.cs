@@ -13,7 +13,15 @@ class Program{
 		action.Invoke(1);
 		Console.WriteLine(functor.Invoke(1,2.0f));
 
+		EventDemo test = new();
+		// test.action = NoParamNoReturn; //illegal
+		test.action += NoParamNoReturn; // legal
+
+
     }
+	static void NoParamNoReturn(){
+		;
+	}
     static void NoReturnFunction(int x){
 	    Console.WriteLine(x);
     }
@@ -21,4 +29,13 @@ class Program{
 	    Console.WriteLine(x+y);
 	    return x;
     }
+}
+
+
+class EventDemo{
+	public event Action action;
+
+	public void CanAssignEventInsideClass(){
+		action = null;
+	}
 }
