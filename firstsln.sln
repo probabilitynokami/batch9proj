@@ -1,4 +1,4 @@
-
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
@@ -92,6 +92,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Preprocessors", "Preprocessors\Preprocessors.csproj", "{E657D7CF-83DB-4990-8BAA-B25E8AA90A06}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Debugger", "Debugger\Debugger.csproj", "{48AFD4B9-B60C-4880-A528-ADB956C95AA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging", "Logging\Logging.csproj", "{ED2C5313-B192-4A7F-AB78-D5704388BAA8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -238,6 +240,10 @@ Global
 		{48AFD4B9-B60C-4880-A528-ADB956C95AA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48AFD4B9-B60C-4880-A528-ADB956C95AA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48AFD4B9-B60C-4880-A528-ADB956C95AA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED2C5313-B192-4A7F-AB78-D5704388BAA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED2C5313-B192-4A7F-AB78-D5704388BAA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED2C5313-B192-4A7F-AB78-D5704388BAA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED2C5313-B192-4A7F-AB78-D5704388BAA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{48AFD4B9-B60C-4880-A528-ADB956C95AA7} = {F744743D-6C06-44A4-A203-7A99FCBC96E3}
