@@ -1,5 +1,4 @@
 ﻿using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization.Json;
 using System.Text.Json;
 using System.Xml.Serialization;
@@ -47,10 +46,17 @@ class Program{
     }
 }
 
+public class HoHoHo{
+    public int Hoho{get;set;}
+    public int Hihi{get;set;}
+}
+
 public class DataClass{
     private int x;
     public int a = 0;
     public int Yeah{get;set;}
+
+    public HoHoHo hohos{get;set;}
     public int[] ABC{get;set;}
     void SetX(int x){
         this.x = x;
@@ -66,6 +72,7 @@ public class DataClass{
     public DataClass(int x){
         this.x = x;
         ABC = [1,2,3,4];
+        hohos = new HoHoHo();
     }
 }
 
