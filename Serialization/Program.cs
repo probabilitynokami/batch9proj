@@ -1,4 +1,6 @@
-﻿using System.Runtime.Serialization.Formatters.Binary;
+﻿using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization.Json;
 using System.Text.Json;
 using System.Xml.Serialization;
 class Program{
@@ -26,6 +28,22 @@ class Program{
             Console.WriteLine(string.Join(" ",d2.ABC));
         }
 
+
+        SerializableDataClass sd = new();
+
+        // using(var fs = new FileStream("./serializabledataclass.json",FileMode.Create,FileAccess.Write)){
+        //     DataContractJsonSerializer serializer = new(typeof(SerializableDataClass));
+        //     serializer.WriteObject(fs,sd);
+        // }
+        using(var fs = new FileStream("./serializabledataclass.json",FileMode.Open,FileAccess.Read)){
+            DataContractJsonSerializer serializer = new(typeof(SerializableDataClass));
+            var sdd = (SerializableDataClass)serializer.ReadObject(fs);
+            Console.WriteLine(sd.GetData1() + " " +sd.data2+" "+sd.data3);
+            Console.WriteLine(sdd.GetData1() + " " +sdd.data2+" "+sdd.data3);
+        }
+        
+
+
     }
 }
 
@@ -49,4 +67,21 @@ public class DataClass{
         this.x = x;
         ABC = [1,2,3,4];
     }
+}
+
+
+[DataContract]
+class SerializableDataClass{
+
+    [DataMember]
+    private int data1 = 1;
+
+    [DataMember]
+    public int data2 = 2;
+
+    public int data3 = 3;
+    public int GetData1(){
+        return data1;
+    }
+
 }
