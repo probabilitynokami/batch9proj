@@ -113,6 +113,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "day11", "day11", "{8AAE46B5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IOStuff", "IOStuff\IOStuff.csproj", "{934DA7B9-D72E-4D27-9E7B-8047269D3F4F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialization", "Serialization\Serialization.csproj", "{48A22ADC-BD49-408B-B45F-186F237E053E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -286,6 +288,10 @@ Global
 		{934DA7B9-D72E-4D27-9E7B-8047269D3F4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{934DA7B9-D72E-4D27-9E7B-8047269D3F4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{934DA7B9-D72E-4D27-9E7B-8047269D3F4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48A22ADC-BD49-408B-B45F-186F237E053E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48A22ADC-BD49-408B-B45F-186F237E053E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48A22ADC-BD49-408B-B45F-186F237E053E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48A22ADC-BD49-408B-B45F-186F237E053E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{6DF0BBEB-A7C5-4648-9B16-F6C35FBD32F5} = {E47D1E14-B3E3-4A8F-8831-C83CFDA4B797}
