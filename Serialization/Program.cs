@@ -9,6 +9,7 @@ class Program{
 
         XmlSerializer xmlSerializer = new XmlSerializer(typeof(DataClass));
         xmlSerializer.Serialize(Console.OpenStandardOutput(),d); // public variable captured
+        Console.WriteLine();
 
         // using(var fs = new FileStream("./test.xml",FileMode.Create)){
         //     xmlSerializer.Serialize(fs,d); // public variable captured
@@ -17,12 +18,12 @@ class Program{
 
         using(var fs = new FileStream("./test.xml",FileMode.Open,FileAccess.Read)){
             DataClass d2 = (DataClass)xmlSerializer.Deserialize(fs);
-            Console.WriteLine(d2.ABC);
+            Console.WriteLine(string.Join(" ",d2.ABC));
         }
         
-        using(var fs = new FileStream("./test.json",FileMode.Open,FileAccess.Read)){
+        using(var fs = new FileStream("./testt.json",FileMode.Open,FileAccess.Read)){
             DataClass d2 = JsonSerializer.Deserialize<DataClass>(fs);
-            Console.WriteLine(d2.ABC);
+            Console.WriteLine(string.Join(" ",d2.ABC));
         }
 
     }
