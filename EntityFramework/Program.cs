@@ -1,4 +1,5 @@
-﻿using System.Runtime.ConstrainedExecution;
+﻿using System.Linq.Expressions;
+using System.Runtime.ConstrainedExecution;
 using Microsoft.EntityFrameworkCore;
 // See https://aka.ms/new-console-template for more information
 
@@ -63,14 +64,23 @@ using (var db = new NorthWindDB()){
         }
     }
 
+    // SELECT * FROM Categories WHERE ....idk
     allCategories = db.Categories
         .Where(c => 
             c.Products.Intersect(
                 db.Products.Where(p => p.ProductName.Contains("Cha"))
             ).Count() > 0
         );
-    Console.WriteLine("\n===================================");
+    Console.WriteLine("\n==============querying from category=================");
 
+    foreach(var cat in allCategories){
+        Console.WriteLine(cat.CategoryName);
+    }
+
+    // SELECT Category FROM Products WHERE "Cha" in ProductName
+    allCategories = db.Products.Where(p => p.ProductName.Contains("Cha")).Select(c => c.Category).Distinct();
+
+    Console.WriteLine("\n==============querying from product, then use select=================");
     foreach(var cat in allCategories){
         Console.WriteLine(cat.CategoryName);
     }

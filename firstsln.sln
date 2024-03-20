@@ -117,6 +117,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialization", "Serializat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFramework", "EntityFramework\EntityFramework.csproj", "{44BA62DD-B096-4297-8CDB-9605FAB0D745}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkDesign", "EntityFrameworkDesign\EntityFrameworkDesign.csproj", "{685A220D-1EF3-4D0A-8546-8A0B2E4861DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkFluentAPI", "EntityFrameworkFluentAPI\EntityFrameworkFluentAPI.csproj", "{E5A5387F-A30D-42FF-A26A-B449FE402554}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -298,6 +302,14 @@ Global
 		{44BA62DD-B096-4297-8CDB-9605FAB0D745}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44BA62DD-B096-4297-8CDB-9605FAB0D745}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44BA62DD-B096-4297-8CDB-9605FAB0D745}.Release|Any CPU.Build.0 = Release|Any CPU
+		{685A220D-1EF3-4D0A-8546-8A0B2E4861DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{685A220D-1EF3-4D0A-8546-8A0B2E4861DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{685A220D-1EF3-4D0A-8546-8A0B2E4861DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{685A220D-1EF3-4D0A-8546-8A0B2E4861DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5A5387F-A30D-42FF-A26A-B449FE402554}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5A5387F-A30D-42FF-A26A-B449FE402554}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5A5387F-A30D-42FF-A26A-B449FE402554}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5A5387F-A30D-42FF-A26A-B449FE402554}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{48A22ADC-BD49-408B-B45F-186F237E053E} = {8AAE46B5-FF45-47DE-B9D0-8CD1C0C14A05}
