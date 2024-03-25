@@ -49,11 +49,11 @@ public class SouthWind : DbContext
                 p.Property(p=>p.CategoryID);
                 p.Property(p=>p.ProductName)
                     .HasColumnName("Name")
-                    .HasColumnType("text")
+                    //.HasColumnType("text")
                     .HasMaxLength(40);
                 p.Property(p=>p.DistributorName)
                     .HasColumnName("Distributor")
-                    .HasColumnType("text")
+                    //.HasColumnType("text")
                     .HasMaxLength(15);
             }
         );
@@ -98,7 +98,8 @@ public class SouthWind : DbContext
 }
 
 
-public class Category{
+public class Category : DbContext
+{
 
     public int ID{get; set;}
 
@@ -113,7 +114,8 @@ public class Category{
     }
 }
 
-public class Product{
+public class Product : DbContext
+{
 
     public int ID{get; set;}
 
@@ -121,6 +123,8 @@ public class Product{
 
     public string ProductName{get;set;} = null!;
     public string DistributorName{get;set;} = null!;
+
+    public Category Category;
 }
 
   
