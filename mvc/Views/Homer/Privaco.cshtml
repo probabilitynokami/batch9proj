@@ -1,0 +1,18 @@
+﻿@model string
+@{
+    ViewData["Title"] = "Privaco Polico";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Uoo this page to detail your site's privacy policy.</p>
+@Html.Raw(Model)
+
+@{
+    string test = Model.ToLower();
+}
+
+@Html.Raw(test)
+
+@Html.Raw(Model.ToLower())
+
+@* <h2>@Model.Append("hehehe")</h2> *@

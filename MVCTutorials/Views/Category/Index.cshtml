@@ -1,0 +1,51 @@
+@model IEnumerable<Category>
+
+    @if(TempData["info"] is not null){
+        <div class="alert alert-success">
+            @TempData["info"]
+        </div>
+    }
+    @if(TempData["error"] is not null) {
+        <div class="alert alert-danger">
+            @TempData["error"]
+        </div>
+    }
+<h1>Category</h1>
+<a asp-action="Create" class="btn btn-primary">Create Category</a>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>
+                CategoryID
+            </th>
+            <th>
+                Category Name
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var entity in Model) {
+            <tr>
+                <td>
+                   @entity.CategoryId
+                </td>
+                <td>
+                    @entity.CategoryName
+                </td>
+                <td>
+                    @entity.Description
+                </td>
+                <td>
+                    <a asp-action="Update" asp-route-id=@entity.CategoryId class="btn btn-warning">Update</a>
+                    <a class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
