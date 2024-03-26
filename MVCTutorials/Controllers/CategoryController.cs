@@ -43,9 +43,9 @@ public class CategoryController : Controller
 			TempData["info"] = $"No changes were made to Category of ID {category.CategoryId}";
 			return RedirectToAction("Index");
 		}
-		//_context.Categories.Update(category);
-		string query = "UPDATE Categories SET CategoryName='"+category.CategoryName.ToString()+ "' WHERE CategoryId="+category.CategoryId.ToString();
-		_context.Database.ExecuteSql($"{query}");
+		_context.Categories.Update(category);
+		// string query = "Categories SET CategoryName='"+category.CategoryName.ToString()+ "' WHERE CategoryId="+category.CategoryId.ToString();
+		// _context.Database.ExecuteSql($"UPDATE {query}");
 		_context.SaveChanges();
 		TempData["info"] = $"Category of ID {category.CategoryId} successfully updated";
 		return RedirectToAction("Index");
