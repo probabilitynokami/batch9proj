@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebAPITest.Data;
 using WebAPITest.Models;
+using WebAPITest.Models.DTO;
 
 namespace WebAPITest.Controllers;
 
@@ -18,7 +19,7 @@ public class CategoryController : ControllerBase
 	[HttpGet]
 	public IActionResult Get()
 	{
-		var allCategories = _context.Categories.ToList();
+		var allCategories = _context.Categories.ToList().ToDTO();
 	 	return Ok(allCategories);
 	}
 
