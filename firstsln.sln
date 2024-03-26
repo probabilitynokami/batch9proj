@@ -127,6 +127,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCTutorial", "MVCTutorials
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPITest", "WebAPITest\WebAPITest.csproj", "{D8A63E1B-0627-4783-9525-00165853139B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryManager", "RepositoryManager\RepositoryManager.csproj", "{FC58500F-EF84-4390-86E2-43677C844047}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -328,6 +330,10 @@ Global
 		{D8A63E1B-0627-4783-9525-00165853139B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8A63E1B-0627-4783-9525-00165853139B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8A63E1B-0627-4783-9525-00165853139B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC58500F-EF84-4390-86E2-43677C844047}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC58500F-EF84-4390-86E2-43677C844047}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC58500F-EF84-4390-86E2-43677C844047}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC58500F-EF84-4390-86E2-43677C844047}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{48A22ADC-BD49-408B-B45F-186F237E053E} = {8AAE46B5-FF45-47DE-B9D0-8CD1C0C14A05}

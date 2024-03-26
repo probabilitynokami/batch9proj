@@ -19,7 +19,7 @@ public class CategoryController : ControllerBase
 	[HttpGet]
 	public IActionResult Get()
 	{
-		var allCategories = _context.Categories.ToList().ToDTO();
+		var allCategories = _context.Categories.Select(c => c.ToDTO());
 	 	return Ok(allCategories);
 	}
 
